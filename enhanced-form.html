@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced HTML5 Content & Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+    header, main, footer {
+      margin-bottom: 40px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #444;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    fieldset {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #1a252f;
+    }
+    .media-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .media-container > * {
+      flex: 1 1 250px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Enhanced HTML5 Content & Form</h1>
+  <p>Practice working with lists, tables, media, and building accessible, validated HTML5 forms.</p>
+</header>
+
+<main>
+
+  <!-- Section: Lists -->
+  <section>
+    <h2>Favorite Programming Languages</h2>
+    <p>Here is a list of popular programming languages organized in an ordered and unordered list:</p>
+    <ol>
+      <li>Python
+        <ul>
+          <li>Data Science</li>
+          <li>Web Development</li>
+          <li>Automation</li>
+        </ul>
+      </li>
+      <li>JavaScript
+        <ul>
+          <li>Frontend</li>
+          <li>Backend (Node.js)</li>
+          <li>Mobile Apps</li>
+        </ul>
+      </li>
+      <li>Java</li>
+      <li>C++</li>
+      <li>Ruby</li>
+    </ol>
+  </section>
+
+  <!-- Section: Table -->
+  <section>
+    <h2>Course Schedule</h2>
+    <table>
+      <caption>Weekly Schedule for Web Development Course</caption>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Topic</th>
+          <th>Duration</th>
+          <th>Instructor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monday</td>
+          <td>HTML5 Basics</td>
+          <td>2 hours</td>
+          <td>Jane Doe</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>CSS3 Fundamentals</td>
+          <td>2 hours</td>
+          <td>John Smith</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>JavaScript Essentials</td>
+          <td>3 hours</td>
+          <td>Emily Davis</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section: Media -->
+  <section>
+    <h2>Media Examples</h2>
+    <div class="media-container">
+      <!-- Image -->
+      <figure>
+        <img src="https://via.placeholder.com/250x150.png?text=Sample+Image" alt="Sample placeholder image" width="250" height="150" />
+        <figcaption>Sample Image</figcaption>
+      </figure>
+
+      <!-- Audio -->
+      <figure>
+        <audio controls>
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <figcaption>Sample Audio</figcaption>
+      </figure>
+
+      <!-- Video -->
+      <figure>
+        <video width="250" controls>
+          <source src="https://sample-videos.com/video123/mp4/240/big_buck_bunny_240p_1mb.mp4" type="video/mp4" />
+          Your browser does not support the video element.
+        </video>
+        <figcaption>Sample Video</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Section: Form -->
+  <section>
+    <h2>Registration Form</h2>
+    <form action="#" method="post" autocomplete="on" novalidate>
+
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="fullname">Full Name *</label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="John Doe"
+          required
+          minlength="3"
+          maxlength="50"
+          autocomplete="name"
+        />
+
+        <label for="email">Email Address *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@mail.com"
+          required
+          autocomplete="email"
+        />
+
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="+1234567890"
+          pattern="^\+?\d{10,15}$"
+          autocomplete="tel"
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Account Details</legend>
+
+        <label for="username">Username *</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Your username"
+          required
+          minlength="5"
+          maxlength="20"
+          pattern="^[A-Za-z0-9_]+$"
+          title="Username must be 5-20 characters and contain only letters, numbers, and underscores."
+          autocomplete="username"
+        />
+
+        <label for="password">Password *</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter a strong password"
+          required
+          minlength="8"
+          autocomplete="new-password"
+        />
+
+        <label for="confirm_password">Confirm Password *</label>
+        <input
+          type="password"
+          id="confirm_password"
+          name="confirm_password"
+          placeholder="Re-enter your password"
+          required
+          minlength="8"
+          autocomplete="new-password"
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferences</legend>
+
+        <label for="gender">Gender *</label>
+        <select id="gender" name="gender" required>
+          <option value="" disabled selected>Select your gender</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="other">Other</option>
+          <option value="prefer_not_say">Prefer not to say</option>
+        </select>
+
+        <label for="bio">Short Bio</label>
+        <textarea
+          id="bio"
+          name="bio"
+          rows="4"
+          maxlength="300"
+          placeholder="Tell us about yourself..."
+        ></textarea>
+
+        <label>
+          <input type="checkbox" name="terms" required />
+          I agree to the <a href="#" target="_blank">terms and conditions</a> *
+        </label>
+      </fieldset>
+
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Enhanced HTML5 Form Assignment</p>
+</footer>
+
+</body>
+</html>
